@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="cl.mind.shrinkquizz.PartyFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Cuantos Tragos debe tomar para Enbriagarse"
+        android:textSize="18sp" />
+
+    <RadioGroup
+        android:id="@+id/partyRg"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingLeft="24dp"
+        android:layout_marginBottom="16dp">
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5 Cervezas" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="10 Cervezas" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toda la Noche" />
+
+
+    </RadioGroup>
+
+</LinearLayout>
