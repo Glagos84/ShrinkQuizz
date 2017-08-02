@@ -1,13 +1,32 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="cl.mind.shrinkquizz.LuckyFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Lucky" />
 
-</FrameLayout>
+    <CheckBox
+        android:id="@+id/happyCb"
+        android:layout_centerInParent="true"
+        android:text="Estas Feliz?"
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <CheckBox
+        android:id="@+id/moodCb"
+        android:enabled="false"
+        android:layout_below="@+id/happyCb"
+        android:button="@drawable/cb_mood_bg"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    
+    <Button
+        android:id="@+id/luckyBtn"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="54dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

@@ -49,17 +49,17 @@ public class PartyFragment extends Fragment {
 
                 int id = radioGroup.getCheckedRadioButtonId();
 
-               if (id != -1 ){
+                if (id != -1) {
 
-                   RadioButton radiobutton = radioGroup.findViewById(id);
-                   String answer = radiobutton.getText().toString();
-                   Toast.makeText(getContext(), answer, Toast.LENGTH_SHORT).show();
+                    RadioButton radiobutton = radioGroup.findViewById(id);
+                    String answer = radiobutton.getText().toString();
+                    Toast.makeText(getContext(), answer, Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
 
-                   Toast.makeText(getContext(), "DEBES MARCAR UNA OPCION", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "DEBES MARCAR UNA OPCION", Toast.LENGTH_SHORT).show();
 
-               }
+                }
 
                 Log.d("RADIO GROUP", String.valueOf(radioGroup.getCheckedRadioButtonId()));
             }
