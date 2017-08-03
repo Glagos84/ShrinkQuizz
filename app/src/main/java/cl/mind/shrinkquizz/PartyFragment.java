@@ -1,10 +1,11 @@
 package cl.mind.shrinkquizz;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -53,7 +54,7 @@ public class PartyFragment extends Fragment {
 
                     RadioButton radiobutton = radioGroup.findViewById(id);
                     String answer = radiobutton.getText().toString();
-                    Toast.makeText(getContext(), answer, Toast.LENGTH_SHORT).show();
+                    showDialog(answer);
 
                 } else {
 
@@ -61,8 +62,26 @@ public class PartyFragment extends Fragment {
 
                 }
 
-                Log.d("RADIO GROUP", String.valueOf(radioGroup.getCheckedRadioButtonId()));
+
             }
         });
+    }
+
+    private void showDialog(String answer) {
+
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle("Nivel de Mambo");
+        alertDialog.setMessage(new PartyResult(answer).score()); /* llamo las clases que cree para el answer y el result, ESTO
+         ES LO IMPORTANTE esto me va a mostrar el resultado procesado.*/
+        alertDialog.setPositiveButton("yeahh", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int i) {
+
+                dialog.dismiss();
+            }
+        });
+
+        alertDialog.show();
+
     }
 }
