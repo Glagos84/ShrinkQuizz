@@ -81,6 +81,7 @@ public class PartyFragment extends Fragment {
             }
         });
 
+
         alertDialog.show();
 
     }
