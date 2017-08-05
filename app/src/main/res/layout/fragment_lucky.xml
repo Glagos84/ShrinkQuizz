@@ -24,6 +24,7 @@
     
     <Button
         android:id="@+id/luckyBtn"
+        android:text="ENVIAR"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="54dp"
         android:layout_width="match_parent"

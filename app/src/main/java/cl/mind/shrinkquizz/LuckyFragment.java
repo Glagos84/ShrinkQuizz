@@ -1,9 +1,11 @@
 package cl.mind.shrinkquizz;
 
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +38,7 @@ public class LuckyFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        CheckBox happy = view.findViewById(R.id.happyCb);
+        final CheckBox happy = view.findViewById(R.id.happyCb);
         final CheckBox mood = view.findViewById(R.id.moodCb); // porq tiene q ser final???
         Button button = view.findViewById(R.id.luckyBtn);
 
@@ -51,7 +53,22 @@ public class LuckyFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                boolean anwer = mood.isChecked();
+
+                final AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+                alertDialog.setTitle("Nivel de Suerte");
+                alertDialog.setMessage(new LuckyResult(happy.isChecked()).answer()); /* llamo las clases que cree para el answer y el result, ESTO
+                ES LO IMPORTANTE esto me va a mostrar el resultado procesado.*/
+                alertDialog.setPositiveButton("Happy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+
+                        dialog.dismiss();
+                    }
+                });
+
+
+                alertDialog.show();
+
             }
         });
 

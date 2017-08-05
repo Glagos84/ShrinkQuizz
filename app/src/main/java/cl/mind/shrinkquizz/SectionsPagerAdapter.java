@@ -42,7 +42,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
             case 0:
                 return "Party";
             case 1:
-                return "Match";
+                return "MatchResult";
             case 2:
                 return "Lucky";
         }
